@@ -25,7 +25,7 @@ export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     ]
   }
 
-  //const svgLoader = buildSvgLoader()
+  const svgLoader = buildSvgLoader()
 
   const cssLoaders = buildCssLoaders(isDev)
 
@@ -36,5 +36,5 @@ export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     exclude: /node_modules/
   }
 
-  return [ fileLoader, babelLoader, typescriptLoader, cssLoaders]
+  return [ svgLoader, fileLoader, babelLoader, typescriptLoader, cssLoaders]
 }
